@@ -25,7 +25,7 @@ In this lab, I am imagining I am a junior front-end developer at a startup. The 
 
 ## My process
 
-Began by creating my local folder structure, and creating the index.html, script.js, and styles.css files by using the specifications in the assignment.
+Began by creating my local folder structure, and creating the index.html, script.js, and styles.css files by using the specifications in the assignment. initially, expanded upong the starter code index.html code to include validation attributes that power the Constraint Validation API, and make sure each <span> error element is correctly configured. In order to stay focused and because javascript adds and removes CSS classes to trigger the visual element changes, I moved into coding the stylesheet in accordance with the starter code and the additional html code.
 
 ### Built with
 
@@ -51,6 +51,7 @@ Began by creating my local folder structure, and creating the index.html, script
 
   - ChatGBT
     - debugging and Q&A
+    - muted hex color style recommendations
 
 ## Author
 
