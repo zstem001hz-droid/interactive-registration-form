@@ -13,47 +13,49 @@
     <div class="container">
         <h1>User Registration:</h1>
 
-        <!-- nonvalidate - tells the browser not to show its default validation -->
+        <!-- nonvalidate - disables browsers default error bubbles -->
         <form id="registrationForm" novalidate>
 
-            <!-- username requirements -->
+            <!-- USERNAME REQUIEMENTS -->
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                required
-                minlength="3"
-                maxlength="20"
-                pattern="[A-Za-z0-9_]+"
-                autocomplete="username"
+                <input type="text" id="username" name="username" required minlength="3" maxlength="20"
+                    pattern="[A-Za-z0-9_]+" autocomplete="username">
 
-                <span class="error-message" id="usernameError"></span>
+                <span class="error-message" id="usernameError" role="alert"></span>
             </div>
 
-
+            <!-- EMAIL REQUIREMENTS -->
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message" id="emailError"></span>
+                <input type="email" id="email" name="email" required autocomplete="email">
+
+                <span class="error-message" id="emailError" role="alert"></span>
             </div>
 
-
+            <!-- PASSWORD REQUIREMENTS -->
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-                <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and
-                    a number.</small>
-                <span class="error-message" id="passwordError"></span>
+                <input type="password" id="password" name="password" required minlength="8"
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+" autocomplete="new-password">
 
-
+                <small>At least 8 characters, one uppercase, one lowercase, and one number.</small>
+                <span class="error-message" id="passwordError" role="alert"></span>
             </div>
+
+            <!-- PASSWORD CONFIRMATION -->
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword">
-                <span class="error-message" id="confirmPasswordError"></span>
+                <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password">
+
+                <span class="error-message" id="confirmPasswordError" role="alert"></span>
             </div>
 
             <button type="submit">Register</button>
 
+            <p id="successMessage" style="display: none; color: green; text-align: center; margin-top: 12px;">
+                ✅ Registration successful! Welcome!
+            </p>
         </form>
     </div>
 </body>

@@ -41,11 +41,11 @@ Began by creating my local folder structure, and creating the index.html, script
 
 ### What I learned
 
-  1. There isn't a need for a HTML "remove" button tag, the remove button is created entirely in javascript and added to the DOM dynamically with document.createElement('button') which then attaches the removeItem function directly to the item.
+  1. Vertically stacking longer input containers rather than writing them out horozontally-linear-inline, makes them easier to structure, code, and digest, vscode's click, automated, document formatting restructures the code inline. I would suggest you only trigger the "Format Document" option after you are sure that your input specifications were structured how you want them to be. 
 
-  2. Consistently validating code with console.log[ging] and working with chrome dev tools - elements console.
+  2. Unicode emoji's can be placed directly into the index.html code. 
 
-  3. li.appendChild(span) and li.appendChild(RemoveButton) assembles the <li> in memory first, then cart.appendChild(li) adds it to the page in one operation, more efficient than adding incomplete elements to the DOM in pieces.
+  3. nonvalidate disables the browser's native error bubbles to stop conflicting code variables. 
 
 ## AI Collaboration
 
@@ -59,8 +59,10 @@ Zac White
 ## Acknowledgments
 
 HTML attribute: pattern
-  - [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern)
-  - [stackoverflow.com](https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces)
+  - [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern).  
+  - [MDN autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete)
+  - [html.spec.whatwg.org](html.spec.whatwg.org)
+  - [stackoverflow.com](https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces) -username
   
 DOM Manipulation
   - [youtube.com](https://www.youtube.com/@TraversyMedia/search?query=DOM%20crash) Traversy Media
