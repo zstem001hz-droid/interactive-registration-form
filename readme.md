@@ -56,13 +56,13 @@ Began by creating my local folder structure, and creating the index.html, script
 
 Zac White
 
-## Acknowledgmentss
+## Acknowledgments
 
-  # HTML attribute: pattern
+HTML attribute: pattern
   - [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern)
   - [stackoverflow.com](https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces)
   
-  # DOM Manipulation
+DOM Manipulation
   - [youtube.com](https://www.youtube.com/@TraversyMedia/search?query=DOM%20crash) Traversy Media
   - [jshint.com](https://jshint.com/) 
 
