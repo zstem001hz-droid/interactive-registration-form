@@ -1,4 +1,4 @@
-# SBA Mod 5: Interactive User Registration Form
+# Mod 5: Lab 2 - Interactive User Registration Form
 
 Building an interactive user registration form applying my knowledge of DOM manipulation, event handling, HTML5, JavaScript form validation, and localStorage. The form will provide real-time feedback to the user and demonstrate how to handle user input effectively and persist simple data.
 
@@ -58,9 +58,11 @@ Zac White
 
 ## Acknowledgmentss
 
-  - [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Element#events) Element
-  		-ParseFloat() - parse a string argument and returns a floating number.
-  		-Price.toFixed() - decimal points (2)
+  # HTML attribute: pattern
+  - [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern)
+  - [stackoverflow.com](https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces)
+  
+  # DOM Manipulation
   - [youtube.com](https://www.youtube.com/@TraversyMedia/search?query=DOM%20crash) Traversy Media
   - [jshint.com](https://jshint.com/) 
 
