@@ -151,7 +151,7 @@ console.log('validateEmail:', validateEmail);
 console.log('validatePassword:', validatePassword);
 console.log('validateConfirmPassword:', validateConfirmPassword);
 
-// INPUT EVENT LISTENERS //
+// EVENT LISTENERS //
 usernameInput.addEventListener('input', () => {
     validateUsername();
 });
@@ -170,3 +170,55 @@ passwordInput.addEventListener('input', () => {
 confirmInput.addEventListener('input', () => {
     validateConfirmPassword();
 });
+
+// FORM SUBMIT EVENT HANDLER //
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const isUsernameValid = validateUsername();
+    const isEmailValid = validateEmail();
+    const isPasswordValid = validatePassword();
+    const isConfirmValid = validateConfirmPassword();
+
+    console.log('Submit attempted. Validation results:', {
+        username: isUsernameValid,
+        email: isEmailValid,
+        password: isPasswordValid,
+        ConfirmPassword: isConfirmValid
+    });
+
+    const allValid = isUsernameValid && isEmailValid && isPasswordValid && isConfirmValid;
+    if (allValid) {
+        // Save username to localStorage
+        localStorage.setItem('registeredUsername', usernameInput.value);
+        // Save email to sessionStorage
+        sessionStorage.setItem('lastEmail', emailInput.value);
+        // Reveal Success Message
+        successMessage.style.display = 'block';
+        setTimeout(() => {
+            // Clear form fields
+            form.reset();
+            [usernameInput, emailInput, passwordInput, confirmInput].forEach(input => {
+                input.classList.remove('input-valid', 'input-error');  
+            });
+
+            // Hide the success message
+            successMessage.style.display = 'none';
+
+            // re-populate username from localStorage
+            const saved = localStorage.getItem('registeredUsername');
+            if (saved) {
+                usernameInput.value = saved;
+                usernameInput.classList.add('input-valid');
+            }
+        }, 3000);
+
+    } else {
+        // FAILURE PATH //
+        if (!isUsernameValid) { usernameInput.focus(); }
+        else if (!isEmailValid) { emailInput.focus(); }
+        else if (!isPasswordValid) { passwordInput.focus(); }
+        else if (!isConfirmValid) { confirmInput.focus(); }
+    }
+        });
+console.log ('submit listener attached to form.');
