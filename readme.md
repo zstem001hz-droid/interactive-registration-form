@@ -27,27 +27,27 @@ In this lab, I am imagining I am a junior front-end developer at a startup. The 
 
 Began by creating my local folder structure, and creating the index.html, script.js, and styles.css files by using the specifications in the assignment. initially, expanded upong the starter code index.html code to include validation attributes that power the Constraint Validation API, and make sure each <span> error element is correctly configured. In order to stay focused and because javascript adds and removes CSS classes to trigger the visual element changes, I moved into coding the stylesheet in accordance with the starter code and the additional html code, while thinking logically about what the javascript elements would be.
 
-And now onto the javascript... Started coding the DOM and localStorage elements at the top of script.js, with dev tools open I continued writing the javascript code that syncs with the Constraint Validation API (helper/error handling), then completed validation checks directly in the dev tools console. 
+And now onto the javascript... Started coding the DOM and localStorage elements at the top of script.js, with dev tools open I continued writing the javascript code that syncs with the Constraint Validation API (helper/error handling), and completed validation checks directly in the dev tools console. After completing the validation section of the form, I moved onto coding the event listeners, event handlers, and decreased my use of console.log[ging] removing some of the previous console logs I had written into the code. 
 
 ### Built with
 
 - Semantic HTML5 markup
 - Custom CSS
 - LocalStorage
+- Constraint Validation API
 - javascript form validation
   - DOM Manipulation
   - event listeners
   - HTML5 validation attributes
-  - Constraint Validation API
   - Dynamic Error Message handling
 
 ### What I learned
 
-  1. Vertically stacking longer input containers rather than writing them out horozontally-linear-inline, makes them easier to structure, code, and digest, vscode's click, automated, document formatting restructures the code inline. I would suggest you only trigger the "Format Document" option after you are sure that your input specifications were structured how you want them to be. 
+  1. Progressive console logging and intermediate usage of console logging in terminal and synchronicity with chrome dev tools. This really helped me out when coding typos, or I had invalid variables present. I could correct them on the spot. 
 
-  2. Unicode emoji's can be placed directly into the index.html code. 
+  2. Using the Constraint Validation API error handling and validations.
 
-  3. Performing console.log() checks with document.getElementByID() validation commands directly in Chrome dev tools -console.
+  3. Adding complexity requirements and validations to form fields.
 
 ## AI Collaboration
 
@@ -73,14 +73,10 @@ DOM Manipulation
 
 ## Reflections
 
-	1. The addProduct button is very dynamic, with coding that removes whitespace, converts the price input string to a decimal number, creates new list items in memory, stores the price, and adds the removeItem button directly as a click listener.  
+	1. I completed an over-excessive amount of console.log operations and left them in the code for my instructor. I would not keep all those console logs in my script once the project is completed in a professional production environment. Practicing console logging and checks and balances with chrome dev tools added a considerable amount of time to my completion of this assessment, and I won't be as extreme in my console usage in further projects.  
 	
-	2. Most of the price code was already written in the starter code. Writing the updateTotalPrice(price) code inside the addProduct function ensured accurate updates to the total price. 
+	2. 
 	
-	3. The if (name) and if (isNAN) statements handle invalid input for product name or price. 
-    - if (name === '') checks if the name field is empty. If it is, it alerts the user. 
-    - if (isNaN(price)) catches anything that isn't a number, like letters or blanks, or... 
-    - if (price <= 0) catches zero or negative numbers. 
+	3.  
 	
-	4. Initially I thought I'd have to write a removeItem <button> tag into the HTML. 
-	
+	4. 

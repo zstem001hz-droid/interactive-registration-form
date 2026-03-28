@@ -12,16 +12,6 @@ const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const confirmError = document.getElementById('confirmPasswordError');
 const successMessage = document.getElementById('successMessage');
-console.log('form:', form);
-console.log('usernameInput:', usernameInput);
-console.log('emailInput:', emailInput);
-console.log('passwordInput', passwordInput);
-console.log('confirmInput', confirmInput);
-console.log('usernameError', usernameError);
-console.log('emailError', emailError);
-console.log('passwordError', passwordError);
-console.log('confirmError', confirmError);
-console.log('successMessage', successMessage);
 
 // LOCAL STORAGE //
 const savedUsername = localStorage.getItem('registeredUsername');
@@ -33,6 +23,7 @@ if (savedUsername) {
     console.log('Username pre-filled from localStorage:', savedUsername);
 }
 
+// HELPER FUNCTIONS //
 // showError Message -sync- Constraint Validations API (red)
 function showError(inputElement, errorElement, message) {
     inputElement.setCustomValidity(message);
@@ -42,13 +33,140 @@ function showError(inputElement, errorElement, message) {
 }
 
 // clearError Message -sync- Constraint Validation API (red to green switch)
-function clearError(inputEement, errorElement) {
+function clearError(inputElement, errorElement) {
     inputElement.setCustomValidity('');
     errorElement.textContent = '';
-    inputElement.classlist.remove('input-error');
+    inputElement.classList.remove('input-error');
     inputElement.classList.add('input-valid');
 }
 console.log('showError:', showError);
 console.log('clearError:', clearError);
 
+// VALIDATION FUNCTIONS - boolean //
+// Validate username parameters //
+function validateUsername() {
+    const validity = usernameInput.validity;
+    console.log('validateUsername called.');
+    console.log('Username ValidityState:', validity);
+    console.log('Username current value:', usernameInput.value);
 
+    if (validity.valueMissing) {
+        // Empty field validation
+        showError(usernameInput, usernameError, 'Username is required.');
+        return false;
+    }
+
+    if (validity.tooShort) {
+        // Characters outside the min/max requirements entered
+        showError(usernameInput, usernameError, `Username must be at least ${usernameInput.minLength} characters.`);
+        return false;
+    }
+
+    if (validity.patternMismatch) {
+        // Patterns outside the requirements entered
+        showError(usernameInput, usernameError, 'Username can only contain letters, numbers, and underscores.');
+        return false;
+    }
+
+    // All requirements met - green light
+    clearError(usernameInput, usernameError);
+    return true;
+}
+
+// Validate email parameters //
+function validateEmail() {
+    const validity = emailInput.validity;
+    console.log('validateEmail Called.');
+    console.log('Email ValidityState:', validity);
+    console.log('email current value:', emailInput.value);
+
+    // email address requirements not met
+    if (validity.typeMismatch) {
+        showError(emailInput, emailError, 'Please enter a valid email address, for example, name@example.com.');
+        return false;
+    }
+    // Empty field validation
+    if (validity.valueMissing) {
+        showError(emailInput, emailError, 'An email address is required.');
+        return false;
+    }
+
+    // All requirements met - green light
+    clearError(emailInput, emailError);
+    return true;
+}
+
+// Password validation
+function validatePassword() {
+    const validity = passwordInput.validity;
+    console.log('validatePassword called.');
+    console.log('Password ValidityState:', validity);
+    console.log('password current value:', passwordInput.value);
+
+    // Empty field validation
+    if (validity.valueMissing) {
+        showError(passwordInput, passwordError, 'A password is required.');
+        return false;
+    }
+
+    // Password minimum length not met
+    if (validity.tooShort) {
+        showError(passwordInput, passwordError, `Password must be at least ${passwordInput.minLength} characters long.`);
+        return false;
+    }
+    // Patterns outside the requirements entered
+    if (validity.patternMismatch) {
+        showError(passwordInput, passwordError, 'Password must include at least one uppercase letter, one lowercase letter, and one number.');
+        return false;
+    }
+
+    // All requirements met - green light
+    clearError(passwordInput, passwordError);
+    return true;
+}
+
+// Confirm Password
+function validateConfirmPassword() {
+    console.log('validateConfirmedPassword called.');
+    console.log('Values Match:', confirmInput.value === passwordInput.value);
+
+    // Both password fields must be completed
+    if (confirmInput.value === '') {
+        showError(confirmInput, confirmError, 'Please confirm your password.');
+        return false;
+    }
+
+    // Password values do not match
+    if (confirmInput.value !== passwordInput.value) {
+        showError(confirmInput, confirmError, 'Passwords do not match. Please try again.');
+        return false;
+    }
+
+    // All requirements met - green light
+    clearError(confirmInput, confirmError);
+    return true;
+}
+console.log('validateUsername:', validateUsername);
+console.log('validateEmail:', validateEmail);
+console.log('validatePassword:', validatePassword);
+console.log('validateConfirmPassword:', validateConfirmPassword);
+
+// INPUT EVENT LISTENERS //
+usernameInput.addEventListener('input', () => {
+    validateUsername();
+});
+
+emailInput.addEventListener('inpit', () => {
+    validateEmail();
+});
+
+passwordInput.addEventListener('input', () => {
+    validatePassword();
+    if (confirmInput.value !== '') {
+        validateConfirmPassword();
+    }
+});
+
+confirmInput.addEventListener('input', () => {
+    validateConfirmPassword();
+});
