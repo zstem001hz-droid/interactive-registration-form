@@ -25,7 +25,9 @@ In this lab, I am imagining I am a junior front-end developer at a startup. The 
 
 ## My process
 
-Began by creating my local folder structure, and creating the index.html, script.js, and styles.css files by using the specifications in the assignment. initially, expanded upong the starter code index.html code to include validation attributes that power the Constraint Validation API, and make sure each <span> error element is correctly configured. In order to stay focused and because javascript adds and removes CSS classes to trigger the visual element changes, I moved into coding the stylesheet in accordance with the starter code and the additional html code.
+Began by creating my local folder structure, and creating the index.html, script.js, and styles.css files by using the specifications in the assignment. initially, expanded upong the starter code index.html code to include validation attributes that power the Constraint Validation API, and make sure each <span> error element is correctly configured. In order to stay focused and because javascript adds and removes CSS classes to trigger the visual element changes, I moved into coding the stylesheet in accordance with the starter code and the additional html code, while thinking logically about what the javascript elements would be.
+
+And now onto the javascript... Started coding the DOM and localStorage elements at the top of script.js, with dev tools open I continued writing the javascript code that syncs with the Constraint Validation API (helper/error handling), then completed validation checks directly in the dev tools console. 
 
 ### Built with
 
@@ -45,7 +47,7 @@ Began by creating my local folder structure, and creating the index.html, script
 
   2. Unicode emoji's can be placed directly into the index.html code. 
 
-  3. nonvalidate disables the browser's native error bubbles to stop conflicting code variables. 
+  3. Performing console.log() checks with document.getElementByID() validation commands directly in Chrome dev tools -console.
 
 ## AI Collaboration
 
