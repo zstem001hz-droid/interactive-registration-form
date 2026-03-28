@@ -29,7 +29,7 @@ Began by creating my local folder structure, and creating the index.html, script
 
 And now onto the javascript... Started coding the DOM and localStorage elements at the top of script.js, with dev tools open I continued writing the javascript code that syncs with the Constraint Validation API (helper/error handling), and completed validation checks directly in the dev tools console. After completing the validation section of the form, I moved onto coding the event listeners, event handlers, submit listener, and decreased my use of console.log[ging] removing some of the previous console logs I had written into the code.
 
-After the submit listener was completed, I added a console.log for the submit-listener, tested the form fields, and debugged/corrected issues with the code, then proceeded to code a storage inspection utility. 
+After the submit listener was completed, I added a console.log for the submit-listener, tested the form fields, and debugged/corrected issues with the code, then proceeded to code a storage inspection utility, and Blur validations. 
 
 ### Built with
 

@@ -39,15 +39,11 @@ function clearError(inputElement, errorElement) {
     inputElement.classList.remove('input-error');
     inputElement.classList.add('input-valid');
 }
-console.log('showError:', showError);
-console.log('clearError:', clearError);
 
 // VALIDATION FUNCTIONS - boolean //
 // Validate username parameters //
 function validateUsername() {
     const validity = usernameInput.validity;
-    console.log('validateUsername called.');
-    console.log('Username ValidityState:', validity);
     console.log('Username current value:', usernameInput.value);
 
     if (validity.valueMissing) {
@@ -76,8 +72,6 @@ function validateUsername() {
 // Validate email parameters //
 function validateEmail() {
     const validity = emailInput.validity;
-    console.log('validateEmail Called.');
-    console.log('Email ValidityState:', validity);
     console.log('email current value:', emailInput.value);
 
     // email address requirements not met
@@ -99,8 +93,6 @@ function validateEmail() {
 // Password validation
 function validatePassword() {
     const validity = passwordInput.validity;
-    console.log('validatePassword called.');
-    console.log('Password ValidityState:', validity);
     console.log('password current value:', passwordInput.value);
 
     // Empty field validation
@@ -127,7 +119,6 @@ function validatePassword() {
 
 // Confirm Password
 function validateConfirmPassword() {
-    console.log('validateConfirmedPassword called.');
     console.log('Values Match:', confirmInput.value === passwordInput.value);
 
     // Both password fields must be completed
@@ -146,17 +137,13 @@ function validateConfirmPassword() {
     clearError(confirmInput, confirmError);
     return true;
 }
-console.log('validateUsername:', validateUsername);
-console.log('validateEmail:', validateEmail);
-console.log('validatePassword:', validatePassword);
-console.log('validateConfirmPassword:', validateConfirmPassword);
 
 // EVENT LISTENERS //
 usernameInput.addEventListener('input', () => {
     validateUsername();
 });
 
-emailInput.addEventListener('inpit', () => {
+emailInput.addEventListener('input', () => {
     validateEmail();
 });
 
@@ -168,6 +155,23 @@ passwordInput.addEventListener('input', () => {
 });
 
 confirmInput.addEventListener('input', () => {
+    validateConfirmPassword();
+});
+
+// BLUR VALIDATION //
+usernameInput.addEventListener('blur', () => {
+    validateUsername();
+});
+
+emailInput.addEventListener('blur', () => {
+    validateEmail();
+});
+
+passwordInput.addEventListener('blur', () => {
+    validatePassword();
+});
+
+confirmInput.addEventListener('blur', () => {
     validateConfirmPassword();
 });
 
@@ -199,7 +203,7 @@ form.addEventListener('submit', (event) => {
             // Clear form fields
             form.reset();
             [usernameInput, emailInput, passwordInput, confirmInput].forEach(input => {
-                input.classList.remove('input-valid', 'input-error');  
+                input.classList.remove('input-valid', 'input-error');
             });
 
             // Hide the success message
@@ -220,5 +224,27 @@ form.addEventListener('submit', (event) => {
         else if (!isPasswordValid) { passwordInput.focus(); }
         else if (!isConfirmValid) { confirmInput.focus(); }
     }
-        });
-console.log ('submit listener attached to form.');
+});
+
+console.log('submit listener attached to form.');
+
+// STORAGE INSPECTION UTILITY //
+console.log('localStorage contents:');
+if (localStorage.length === 0) {
+    console.log('  (empty)');
+} else {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        console.log(`  [${i}] ${key}:`, localStorage.getItem(key));
+    }
+}
+
+console.log('sessionStorage contents:');
+if (sessionStorage.length === 0) {
+    console.log('  (empty)');
+} else {
+    for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        console.log(`  [${i}] ${key}:`, sessionStorage.getItem(key));
+    }
+}

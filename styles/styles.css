@@ -43,8 +43,6 @@ h1 {
     /* Makes width calculation easier */
 }
 
-/* You can add a .valid class if you want to style valid inputs too */
-
 .form-group input:user-valid {
     border-color: #2ecc71;
 }
@@ -81,12 +79,16 @@ button[type="submit"] {
     font-size: 16px;
 }
 
-button[type="submit":hover {
-    background-color: #2980b9;
-}]
+button[type="submit"]:hover {
+    background-color: #2ecc71;
+}
 
 .form-group input.input-valid {
     border-color: #2ecc71;
+}
+
+.form-group input.input-error {
+    border-color: #e74c3c;
 }
 
 #successMessage {
