@@ -25,7 +25,10 @@ Began by creating my local folder structure, and creating the index.html, script
 
 And now onto the javascript... Started coding the DOM and localStorage elements at the top of script.js, with dev tools open I continued writing the javascript code that syncs with the Constraint Validation API (helper/error handling), and completed validation checks directly in the dev tools console. After completing the validation section of the form, I moved onto coding the event listeners, event handlers, submit listener, and decreased my use of console.log[ging] removing some of the previous console logs I had written into the code.
 
-After the submit listener was completed, I added a console.log for the submit-listener, tested the form fields, and debugged/corrected issues with the code, then proceeded to code a storage inspection utility, and blur validations to complete the lab. Turned out the storage inspection utility wasn't a requirement for the assignment, but I left it in regardess, it was a difficult component to figure out.  
+After the submit listener was completed, I added a console.log for the submit-listener, tested the form fields, and debugged/corrected issues with the code, then proceeded to code a storage inspection utility, and blur validations to complete the lab. Turned out the storage inspection utility wasn't a requirement for the assignment, but I left it in regardess, it was a difficult component to figure out.
+
+Performed Testing and Validations and all tests passed. 
+Had to use localStorage.removeItem('registeredUsername') for testing, Live Server, and file:// addresses would not display the value to delete.
 
 ### Built with
 
