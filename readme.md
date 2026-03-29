@@ -48,7 +48,7 @@ Had to use localStorage.removeItem('registeredUsername') for testing, Live Serve
   
   Practicing console logging checks and balances with chrome dev tools added a considerable amount of time to my completion of this assessment, and I will be more conservative with my console logging (especially those left in this script) on future projects. 
 
-  3. Using the Constraint Validation API error handling and validations.
+  2. Using the Constraint Validation API error handling and validations.
 
   3. Adding complexity requirements and validations to form fields.
 
