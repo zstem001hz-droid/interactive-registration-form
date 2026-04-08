@@ -55,7 +55,7 @@ Had to use localStorage.removeItem('registeredUsername') for testing, Live Serve
 
 ## AI Collaboration
 
-  - ChatGBT
+  - ChatGPT
     - debugging and Q&A
     - muted hex color style recommendations
     - debug odd web tools behavior which turned out to be a typo. expected form.reset(); was coded as form.requestFullscreen(); - resolved
